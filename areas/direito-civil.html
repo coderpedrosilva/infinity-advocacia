@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direito Civil — Infinity Advocacia</title>
+  <link rel="stylesheet" href="../blog/artigo.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <img src="../assets/Infinity-Advocacia_logotipo_un 1.png" alt="Infinity Advocacia" />
+      </a>
+      <nav>
+        <ul class="nav__list" id="navList">
+          <li><a href="../index.html#home"       class="nav__link">HOME</a></li>
+          <li><a href="../index.html#quem-somos" class="nav__link">QUEM SOMOS</a></li>
+          <li><a href="../index.html#atuacao"    class="nav__link active">ÁREA DE ATUAÇÃO</a></li>
+          <li><a href="../index.html#blog"       class="nav__link">BLOG</a></li>
+          <li><a href="../index.html#contato"    class="nav__link">CONTATO</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <span class="article-hero__tag">Área de Atuação</span>
+    <h1 class="article-hero__title">Direito Civil</h1>
+    <p class="article-hero__meta">Infinity Advocacia &nbsp;·&nbsp; Assessoria jurídica especializada</p>
+  </section>
+
+  <div class="back-wrap">
+    <a href="../index.html#atuacao" class="btn-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Voltar às Áreas de Atuação
+    </a>
+  </div>
+
+  <main class="article-wrap">
+    <img src="../assets/Serviços.png" alt="Direito Civil" class="article-img" />
+
+    <div class="article-body">
+      <p>
+        O Direito Civil é o ramo do direito que regula as relações entre particulares, abrangendo questões patrimoniais, contratuais, de família e sucessões. A equipe da Infinity Advocacia possui vasta experiência na defesa dos interesses de pessoas físicas e jurídicas em todas as esferas do Direito Civil.
+      </p>
+
+      <h2>Indenizações — Danos Materiais e Morais</h2>
+      <p>
+        Quando você sofre um prejuízo causado por terceiros — seja por acidente, erro médico, falha na prestação de serviços ou qualquer outra conduta ilícita — você tem direito à reparação. A Infinity Advocacia atua na identificação, quantificação e cobrança judicial de:
+      </p>
+      <ul>
+        <li><strong>Danos materiais:</strong> prejuízos financeiros efetivamente sofridos, como despesas médicas, reparos de veículos e lucros cessantes;</li>
+        <li><strong>Danos morais:</strong> lesão à honra, imagem, dignidade e integridade psicológica da pessoa;</li>
+        <li><strong>Danos estéticos:</strong> alterações permanentes na aparência física da vítima;</li>
+        <li><strong>Danos existenciais:</strong> comprometimento do projeto de vida e das atividades rotineiras.</li>
+      </ul>
+
+      <h2>Perdas e Danos</h2>
+      <p>
+        Em contratos descumpridos, o credor tem direito à reparação integral pelo inadimplemento, incluindo o que efetivamente perdeu (dano emergente) e o que deixou de ganhar (lucro cessante). Nossa equipe atua no cálculo preciso e na cobrança judicial dessas verbas.
+      </p>
+
+      <h2>Contratos em Geral</h2>
+      <p>
+        Redigimos, revisamos e negociamos contratos civis de toda natureza, garantindo que as cláusulas protejam adequadamente os seus interesses. Também atuamos em disputas contratuais, revisão de cláusulas abusivas e rescisão contratual.
+      </p>
+      <blockquote>
+        "Um contrato bem redigido previne litígios. Um advogado experiente ao seu lado durante a negociação pode economizar muito tempo e dinheiro no futuro."
+        <br/><strong>— Equipe Infinity Advocacia</strong>
+      </blockquote>
+
+      <h2>Direito do Consumidor</h2>
+      <p>
+        O Código de Defesa do Consumidor (CDC) garante uma série de direitos ao comprador de produtos e serviços. Atuamos em casos de:
+      </p>
+      <ul>
+        <li>Produtos defeituosos ou falsamente anunciados;</li>
+        <li>Cobranças indevidas e práticas abusivas;</li>
+        <li>Negativação indevida em cadastros de inadimplentes (SPC, Serasa);</li>
+        <li>Cancelamento de contratos e devolução de valores;</li>
+        <li>Atraso na entrega de produtos e serviços.</li>
+      </ul>
+
+      <h2>Inventário em Cartório ou em Juízo</h2>
+      <p>
+        O inventário é o processo de levantamento e partilha dos bens deixados por uma pessoa falecida. Quando todos os herdeiros são maiores e capazes e há acordo entre eles, o inventário pode ser realizado em cartório (mais rápido e econômico). Havendo divergências ou herdeiros incapazes, o processo deve tramitar judicialmente.
+      </p>
+      <p>
+        A Infinity Advocacia acompanha todo o processo de inventário, orientando os herdeiros, reunindo a documentação necessária e garantindo que a partilha ocorra de forma justa e ágil.
+      </p>
+
+      <h2>Entre em contato</h2>
+      <p>
+        Se você tem alguma questão relacionada ao Direito Civil, fale com nossa equipe. Oferecemos uma primeira consulta para entender sua situação e indicar o melhor caminho jurídico para o seu caso.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <img src="../assets/Infinity-Advocacia_logotipo_un 2.png" alt="Infinity Advocacia" class="footer__logo" />
+    <p class="footer__copy">2020 - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    const h = document.getElementById('hamburger');
+    const n = document.getElementById('navList');
+    h.addEventListener('click', () => { n.classList.toggle('open'); h.classList.toggle('open'); });
+  </script>
+</body>
+</html>

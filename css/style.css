@@ -1,0 +1,785 @@
+/* ═══════════════════════════════════════════════════════════
+   INFINITY ADVOCACIA — CSS fiel ao Figma
+
+   Paleta (do Design System):
+     Navy  : #132a58
+     Gold  : #937531  (botões, overlay 70%)
+     Gold L: #d5b774  (dots)
+     Slate : #4f6389  (botões primários)
+     Dark  : #1b1b1b
+
+   Tipografia: Roboto 400/500/700
+   Base design: 1440 px
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── RESET & BASE ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  {
+  scroll-behavior: smooth;
+  scroll-padding-top: 135px;
+}
+body  { font-family: 'Roboto', sans-serif; color: #1b1b1b; }
+img   { display: block; max-width: 100%; }
+a     { text-decoration: none; color: inherit; }
+ul    { list-style: none; }
+
+/* ── BOTÕES ──────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0 32px;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 150px;          /* pill — exato do Figma */
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: filter .2s, transform .15s;
+  white-space: nowrap;
+}
+.btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+.btn--slate {
+  background: #4f6389;
+  color: #ffffff;
+}
+
+.btn--gold {
+  background: #937531;
+  color: #ffffff;
+  height: 41px;
+  line-height: 41px;
+  font-size: 14px;
+  padding: 0 22px;
+}
+
+/* ── HEADINGS COMUNS ─────────────────────────────────────── */
+.section-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.section-heading--white { color: #ffffff; }
+.section-heading--navy  { color: #132a58; }
+
+/* ══════════════════════════════════════════════════════════
+   HEADER — 135px, bg: #132a58
+   ══════════════════════════════════════════════════════════ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: #132a58;
+  height: 135px;
+}
+
+.nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 33px;
+}
+
+.logo img {
+  height: 110px;
+  width: auto;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav__link {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255,255,255,.85);
+  position: relative;
+  transition: color .2s;
+}
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: #d5b774;
+  transition: width .3s;
+}
+.nav__link:hover,
+.nav__link.active { color: #ffffff; }
+.nav__link:hover::after,
+.nav__link.active::after { width: 100%; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 28px; height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ══════════════════════════════════════════════════════════
+   HERO
+   height: 698px  |  foto + overlay gold rgba(147,117,49,.70)
+   Figma exacto:
+     "O escritório"  → x=187px, top=273px dentro do hero
+     Botão slate     → top=370px
+     Dots            → bottom=55px, centralizados
+   ══════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 698px;
+  margin-top: 135px;
+  overflow: hidden;
+}
+
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(147, 117, 49, 0.70);
+}
+
+/* Conteúdo posicionado exatamente como no Figma */
+.hero__body {
+  position: absolute;
+  z-index: 2;
+  top: 273px;       /* y do "O escritório" relativo ao topo do hero */
+  left: 187px;      /* x_rel = 187px — Figma exato */
+}
+
+.hero__title {
+  font-size: 70px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.17;   /* 82px / 70px */
+  margin-bottom: 20px;
+}
+
+/* Dots — posição absoluta: Figma y=643px do topo */
+.hero__dots {
+  position: absolute;
+  z-index: 2;
+  bottom: 55px;         /* 698 - 643 = 55px do rodapé */
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.dot--active { background: #d5b774; }
+
+/* ══════════════════════════════════════════════════════════
+   QUEM SOMOS
+   height: 500px, bg: #132a58
+   Left: imagem 497×355  |  Right: heading + texto + botão
+   ══════════════════════════════════════════════════════════ */
+.about {
+  background: #132a58;
+  min-height: 500px;
+  width: 100%;
+  display: block;   /* garante full-width mesmo em body com max-width */
+}
+
+.about-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  /* Figma: imagem em x_rel=110, conteúdo em x_rel=702 → gap ~95px */
+  padding: 72px 110px;
+  display: flex;
+  align-items: center;
+  gap: 95px;
+  min-height: 500px;
+}
+
+.about__image {
+  flex: 0 0 auto;
+  width: 497px;
+}
+.about__image img {
+  width: 100%;
+  height: 355px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.about__content {
+  flex: 1;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about__content h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+.about__content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  margin-bottom: 20px;
+  color: rgba(255,255,255,.9);
+}
+/* botão direito — Figma: x_rel=1075 dentro da col de conteúdo */
+.about__content .btn {
+  margin-top: 16px;
+  align-self: flex-end;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ÁREA DE ATUAÇÃO
+   height: 738px, imagem de fundo + overlay gold 70%
+   4 cards navy 300×300
+   Botão "Entre em contato" (slate) centralizado abaixo
+   ══════════════════════════════════════════════════════════ */
+.services {
+  position: relative;
+  min-height: 738px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.services__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.services__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(147, 117, 49, 0.70);
+}
+
+.services__body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* Figma: heading a 40px do topo, cards a 193px do topo */
+  padding: 40px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.services__body .section-heading { margin-bottom: 40px; }
+
+/* 4 cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #132a58;
+  border-radius: 24px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* tudo centralizado — igual Figma/Behance */
+  text-align: center;
+  gap: 0;
+  min-height: 300px;
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.card__line {
+  width: 100px;
+  height: 5px;
+  background: #937531;
+  margin: 14px 0 16px;
+  border-radius: 2px;
+}
+
+.card__text {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.card__btn { align-self: center; }
+
+.services__cta { margin-top: 0; }
+
+/* ══════════════════════════════════════════════════════════
+   EQUIPE
+   height: 702px, bg: #132a58
+   3 fotos 250×410 em linha (Sandra 82px mais baixa)
+   ══════════════════════════════════════════════════════════ */
+.team {
+  background: #132a58;
+  min-height: 702px;
+  padding: 60px 33px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team__grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 90px;
+  margin-top: 32px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+.team-member--lower { margin-top: 82px; }  /* Sandra — staggered no Figma */
+
+.team-member__photo {
+  width: 250px;
+  height: 410px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.team-member__name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+.team-member__role {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,.6);
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════════
+   DEPOIMENTOS
+   height: 622px, foto + overlay gold 70%
+   5 círculos navy 250×250 dispostos em layout escalonado
+   ══════════════════════════════════════════════════════════ */
+.testimonials {
+  position: relative;
+  height: 622px;
+  overflow: hidden;
+}
+
+.testimonials__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.testimonials__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(147, 117, 49, 0.70);
+}
+
+.testimonials__body {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+/* Bubbles — posicionamento absoluto fiel ao Figma (base 1440px) */
+.bubbles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.bubble {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: #132a58;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.bubble p {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.bubble__author {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #d5b774;
+}
+.bubble__role {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  color: rgba(255,255,255,.6);
+  margin-top: 2px;
+}
+
+/*
+  Posições relativas ao design 1440px:
+  x: posição absoluta em %  (x_abs / 1440 * 100)
+  y: posição absoluta em px  (relativa ao início da seção)
+
+  Ellipse 5: x=151, y=82
+  Ellipse 9: x=1040, y=82
+  Ellipse 7: x=595, y=132  (centro)
+  Ellipse 6: x=347, y=311
+  Ellipse 8: x=843, y=311
+*/
+.bubble--1 { left: 10.49%; top: 82px; }   /* Ellipse 5 */
+.bubble--2 { left: 24.10%; top: 311px; }  /* Ellipse 6 */
+.bubble--3 { left: 41.32%; top: 132px; }  /* Ellipse 7 — centro */
+.bubble--4 { left: 58.54%; top: 311px; }  /* Ellipse 8 */
+.bubble--5 { left: 72.22%; top: 82px; }   /* Ellipse 9 */
+
+/* heading sobre os bubbles */
+.testimonials__body .section-heading {
+  position: relative;
+  z-index: 3;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOG
+   height: 776px, bg: #ffffff
+   Esquerda: lista de artigos com "> Leia mais"
+   Direita: imagem 400×400 + artigo destacado
+   ══════════════════════════════════════════════════════════ */
+.blog {
+  background: #ffffff;
+  min-height: 776px;
+}
+
+.blog__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 33px;
+}
+
+.blog__inner .section-heading { margin-bottom: 40px; }
+
+.blog__columns {
+  display: grid;
+  grid-template-columns: 529px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.blog__articles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.article {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0;
+}
+.article:first-child { padding-top: 0; }
+
+.article__text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #132a58;
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+.article__text strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.article__link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #132a58;
+  display: inline-block;
+}
+.article__link:hover { color: #937531; }
+
+.blog__featured { display: flex; flex-direction: column; gap: 16px; }
+.blog__img {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONTATO
+   height: 800px, bg: #132a58
+   Esquerda: formulário (450px campos)
+   Direita: "Contato" + endereço + ícones
+   ══════════════════════════════════════════════════════════ */
+.contact {
+  background: #132a58;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+}
+
+.contact__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  /* Figma: form em x_rel=287, info em x_rel=841 */
+  padding: 80px 287px;
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 104px;   /* 841-287-450=104px de gap */
+  align-items: start;
+}
+
+/* formulário */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field-wrap { width: 450px; }
+
+.form-input {
+  width: 100%;
+  height: 52px;
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 0 18px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4f6389;
+  outline: none;
+}
+.form-input::placeholder { color: #4f6389; }
+
+.form-input--textarea {
+  height: 171px;
+  padding: 14px 18px;
+  resize: vertical;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: -8px;
+}
+
+/* info */
+.contact__info-col { color: #ffffff; }
+
+.contact__info-col .section-heading {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.contact__address {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 28px;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 16px;
+}
+.contact__icon {
+  width: 21px; height: 21px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER
+   bg: #132a58  |  logo centrado  |  copyright
+   ══════════════════════════════════════════════════════════ */
+.footer {
+  background: #132a58;
+  border-top: 1px solid rgba(213,183,116,.3);
+  padding: 48px 33px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__logo {
+  height: 100px;
+  width: auto;
+}
+
+.footer__copy {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,.5);
+  letter-spacing: .5px;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVO
+   ══════════════════════════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .cards { grid-template-columns: repeat(2, 300px); }
+  .blog__columns { grid-template-columns: 1fr; }
+  .blog__img { max-width: 100%; height: 260px; }
+}
+
+@media (max-width: 900px) {
+  .header { height: 90px; }
+  .logo img { height: 64px; }
+  .hero { margin-top: 90px; height: 520px; }
+  .hero__body {
+    position: absolute;
+    top: auto;
+    bottom: 100px;
+    left: 24px;
+    right: 24px;
+  }
+  .hero__title { font-size: 44px; }
+
+  .nav__list {
+    position: fixed;
+    top: 90px; left: 0; right: 0;
+    background: #132a58;
+    flex-direction: column;
+    padding: 24px 32px;
+    gap: 20px;
+    transform: translateY(-110%);
+    opacity: 0;
+    transition: transform .35s, opacity .3s;
+    pointer-events: none;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+  .nav__list.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+  .hamburger { display: flex; }
+
+  .about-inner {
+    flex-direction: column;
+    padding: 48px 24px;
+    gap: 32px;
+  }
+  .about__image { width: 100%; }
+  .about__image img { width: 100%; height: 280px; }
+
+  .cards { grid-template-columns: 1fr 1fr; }
+
+  .team__grid { flex-direction: column; align-items: center; gap: 40px; }
+  .team-member--lower { margin-top: 0; }
+
+  /* bubbles — responsivo: grid 2×3 */
+  .testimonials { height: auto; padding: 60px 24px; }
+  .testimonials__body { padding-top: 0; }
+  .bubbles {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .bubble { position: static; }
+
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 48px 24px;
+  }
+  .form-field-wrap { width: 100%; }
+  .form-input { width: 100%; }
+
+  .blog__columns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .cards { grid-template-columns: 1fr; }
+  .cards .card { width: 100%; min-height: auto; }
+  .hero__title { font-size: 36px; }
+  .hero__body { padding: 40px 20px 60px; }
+  .nav-inner { padding: 0 20px; }
+}

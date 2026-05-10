@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infinity Advocacia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER / NAV
+  ═══════════════════════════════════════ -->
+  <header class="header" id="home">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <img src="assets/Infinity-Advocacia_logotipo_un 1.png" alt="Infinity Advocacia" />
+      </a>
+      <nav class="nav">
+        <ul class="nav__list" id="navList">
+          <li><a href="#home"       class="nav__link active">HOME</a></li>
+          <li><a href="#quem-somos" class="nav__link">QUEM SOMOS</a></li>
+          <li><a href="#atuacao"    class="nav__link">ÁREA DE ATUAÇÃO</a></li>
+          <li><a href="#blog"       class="nav__link">BLOG</a></li>
+          <li><a href="#contato"    class="nav__link">CONTATO</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       HERO — "O escritório"
+  ═══════════════════════════════════════ -->
+  <section class="hero">
+    <img src="assets/chamada principal.png" alt="" class="hero__photo" />
+    <div class="hero__overlay"></div>
+    <div class="hero__body">
+      <h1 class="hero__title">O escritório</h1>
+      <a href="#quem-somos" class="btn btn--slate">Saiba mais</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       QUEM SOMOS
+  ═══════════════════════════════════════ -->
+  <section class="about" id="quem-somos">
+    <div class="about-inner">
+      <div class="about__image">
+        <img src="assets/rsssaaaqw 1.png" alt="Advogado com balança da justiça" />
+      </div>
+      <div class="about__content">
+        <h2 class="section-heading">Quem somos</h2>
+        <p>
+          Nós da Infinity Advocacia estamos preparados para prestar assessoria jurídica bem como
+          orientar, defender e realizar todo o acompanhamento do cliente antes e durante um processo
+          judicial.
+        </p>
+        <p>
+          Nos orgulhamos de realizar atendimentos personalizados, voltados para às necessidades do
+          cliente, alcançando os melhores resultados e oferecendo assistência em todas as etapas
+          do processo.
+        </p>
+        <a href="#contato" class="btn btn--slate">Saiba mais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ÁREA DE ATUAÇÃO
+  ═══════════════════════════════════════ -->
+  <section class="services" id="atuacao">
+    <img src="assets/Serviços.png" alt="" class="services__photo" />
+    <div class="services__overlay"></div>
+    <div class="services__body">
+      <h2 class="section-heading section-heading--white">Área de atuação</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3 class="card__title">DIREITO<br>CIVIL</h3>
+          <div class="card__line"></div>
+          <p class="card__text">
+            Indenizações (Danos Materiais e Morais), Perdas e Danos, Contratos em geral,
+            Direito do Consumidor, Inventário em Cartório ou em Juízo…
+          </p>
+          <a href="areas/direito-civil.html" class="btn btn--gold card__btn">Saiba mais</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">DIREITO<br>FAMILIAR</h3>
+          <div class="card__line"></div>
+          <p class="card__text">
+            Casamento homoafetivo, Reconhecimento e dissolução de união estável, Divórcio,
+            Pensão Alimentícia, Investigação de paternidade (DNA)…
+          </p>
+          <a href="areas/direito-familiar.html" class="btn btn--gold card__btn">Saiba mais</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">DIREITO<br>IMOBILIÁRIO</h3>
+          <div class="card__line"></div>
+          <p class="card__text">
+            Contratos Imobiliários (compra e venda/locação), Distrato/Desistência,
+            Devolução de Valores, Atraso na obra, Locação e despejo…
+          </p>
+          <a href="areas/direito-imobiliario.html" class="btn btn--gold card__btn">Saiba mais</a>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">DIREITO<br>EMPRESARIAL</h3>
+          <div class="card__line"></div>
+          <p class="card__text">
+            Em constante inovação, o Escritório Infinity Advocacia lançou uma área de suporte
+            jurídico para atender às necessidades empresariais…
+          </p>
+          <a href="areas/direito-empresarial.html" class="btn btn--gold card__btn">Saiba mais</a>
+        </div>
+
+      </div>
+
+      <a href="#contato" class="btn btn--slate services__cta">Entre em contato</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       EQUIPE
+  ═══════════════════════════════════════ -->
+  <section class="team" id="equipe">
+    <h2 class="section-heading section-heading--white">Equipe</h2>
+
+    <div class="team__grid">
+
+      <div class="team-member">
+        <img src="assets/Rectangle 13.png" alt="Mário Sérgio Santanna" class="team-member__photo" />
+        <p class="team-member__name">Mário Sérgio Santanna</p>
+        <p class="team-member__role">Advogado</p>
+      </div>
+
+      <div class="team-member team-member--lower">
+        <img src="assets/Rectangle 15.png" alt="Sandra de Lima Farias" class="team-member__photo" />
+        <p class="team-member__name">Sandra de Lima Farias</p>
+        <p class="team-member__role">Advogada</p>
+      </div>
+
+      <div class="team-member">
+        <img src="assets/Rectangle 14.png" alt="Celso Cardoso dos Santos" class="team-member__photo" />
+        <p class="team-member__name">Celso Cardoso dos Santos</p>
+        <p class="team-member__role">Advogado</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       DEPOIMENTOS
+  ═══════════════════════════════════════ -->
+  <section class="testimonials">
+    <img src="assets/Depoimentos de clientes.png" alt="" class="testimonials__photo" />
+    <div class="testimonials__overlay"></div>
+    <div class="testimonials__body">
+      <h2 class="section-heading section-heading--white">Depoimentos</h2>
+
+      <div class="bubbles">
+        <div class="bubble bubble--1">
+          <p>Vem desenvolvendo um serviço advocatício exemplar. Agradeço o empenho do escritório.</p>
+          <span class="bubble__author">Sergio Eduardo Matos Cruz</span>
+          <span class="bubble__role">Produtor musical</span>
+        </div>
+
+        <div class="bubble bubble--2">
+          <p>"Conheço de muitos anos é um excelente profissional, fazendo grandes trabalhos para seus clientes. Gostaria de deixar meu depoimento e minha indicação para esse profissional"</p>
+          <span class="bubble__author">Alan Leite</span>
+          <span class="bubble__role">Educador físico</span>
+        </div>
+
+        <div class="bubble bubble--3">
+          <p>"Excelente profissional, atenta a detalhes!!! Super competente!!! Indico"</p>
+          <span class="bubble__author">Tamires Delatorre da Silva</span>
+          <span class="bubble__role">Estudante</span>
+        </div>
+
+        <div class="bubble bubble--4">
+          <p>"Sou atendida há 5 anos, excelente profissional, além de muito eficiente e atencioso."</p>
+          <span class="bubble__author">Alana Marques</span>
+          <span class="bubble__role">Dentista</span>
+        </div>
+
+        <div class="bubble bubble--5">
+          <p>"Transparência e um trabalho impecável, esta é a forma que descrevo sua atuação. Tenho total confiança e por isso recomendo muito!"</p>
+          <span class="bubble__author">Claudineide Silva</span>
+          <span class="bubble__role">Consultora de vendas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       BLOG
+  ═══════════════════════════════════════ -->
+  <section class="blog" id="blog">
+    <div class="blog__inner">
+      <h2 class="section-heading section-heading--navy">Blog</h2>
+
+      <div class="blog__columns">
+
+        <div class="blog__articles">
+
+          <article class="article">
+            <p class="article__text">
+              <strong>Mulher agredida após acidente de trânsito será indenizada por danos morais</strong><br>
+              O juiz de Direito Domicio Whately Pacheco e Silva, da 1ª vara do Juizado Especial Cível
+              de Vergueiro/SP, condenou uma mulher a [...]
+            </p>
+            <a href="blog/mulher-agredida.html" class="article__link">&gt; Leia mais</a>
+          </article>
+
+          <article class="article">
+            <p class="article__text">
+              <strong>Medida protetiva é concedida para tia que teria sido ameaçada por sobrinha</strong><br>
+              O juiz de Direito Ju Hyeon Lee, da comarca de São Miguel Paulista, concedeu medida
+              protetiva de urgência para que a sobrinha seja proibida [...]
+            </p>
+            <a href="blog/medida-protetiva.html" class="article__link">&gt; Leia mais</a>
+          </article>
+
+          <article class="article">
+            <p class="article__text">
+              <strong>TJ/SP: Prescrição de órteses e próteses oftalmológicas não é atividade privativa de médicos</strong><br>
+              Decisão é da 3ª câmara de Direito Público do TJ/SP, ao julgar recurso de optometrista. [...]
+            </p>
+            <a href="blog/tj-sp-orteses.html" class="article__link">&gt; Leia mais</a>
+          </article>
+
+          <article class="article">
+            <p class="article__text">
+              <strong>Planejamento sucessório</strong><br>
+              Pensar e falar sobre a nossa própria morte não é algo agradável de se fazer. Entretanto,
+              temos que ter consciência de que processos de inventário podem ser longos, caros e
+              dolorosos para aqueles que [...]
+            </p>
+            <a href="blog/planejamento-sucessorio.html" class="article__link">&gt; Leia mais</a>
+          </article>
+
+        </div>
+
+        <div class="blog__featured">
+          <img src="assets/Rectangle 17.png" alt="Blog" class="blog__img" />
+          <p class="article__text">
+            <strong>Lei sobre importunação sexual retroage para beneficiar réu acusado de estupro</strong><br>
+            A 6ª turma do STJ readequou a classificação do crime de estupro considerando a
+            superveniência de lei penal mais benéfica ao réu [...]
+          </p>
+          <a href="blog/lei-importunacao-sexual.html" class="article__link">&gt; Leia mais</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTATO
+  ═══════════════════════════════════════ -->
+  <section class="contact" id="contato">
+    <div class="contact__inner">
+
+      <div class="contact__form-col">
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-field-wrap">
+            <input type="text" class="form-input" placeholder="Digite seu nome" />
+          </div>
+          <div class="form-field-wrap">
+            <input type="email" class="form-input" placeholder="Digite seu e-mail" />
+          </div>
+          <div class="form-field-wrap">
+            <input type="text" class="form-input" placeholder="Assunto" />
+          </div>
+          <p class="form-label">Mensagem</p>
+          <div class="form-field-wrap">
+            <textarea class="form-input form-input--textarea" rows="5"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact__info-col">
+        <h2 class="section-heading section-heading--white">Contato</h2>
+
+        <p class="contact__address">
+          Infinity Advocacia<br>
+          Rua Tijuco Preto, 4253 – conj. 78<br>
+          CEP: 01106-010 – Tatuapé – São Paulo
+        </p>
+
+        <div class="contact__item">
+          <img src="assets/phone 1.png" alt="Telefone" class="contact__icon" />
+          <span>+55 11 2097-8686</span>
+        </div>
+        <div class="contact__item">
+          <img src="assets/whatsapp 1.png" alt="WhatsApp" class="contact__icon" />
+          <span>11 97799-8563</span>
+        </div>
+        <div class="contact__item">
+          <img src="assets/mail 1.png" alt="E-mail" class="contact__icon" />
+          <span>contato@infinityadvocacia.com.br</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <img src="assets/Infinity-Advocacia_logotipo_un 2.png" alt="Infinity Advocacia" class="footer__logo" />
+    <p class="footer__copy">2020 - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
