@@ -606,7 +606,7 @@ ul    { list-style: none; }
   gap: 16px;
 }
 
-.form-field-wrap { width: 450px; }
+.form-field-wrap { max-width: 450px; width: 100%; }
 
 .form-input {
   width: 100%;
@@ -700,13 +700,64 @@ ul    { list-style: none; }
 /* ══════════════════════════════════════════════════════════
    RESPONSIVO
    ══════════════════════════════════════════════════════════ */
+
+/* ── 1300px: corrige padding excessivo no contact ────── */
+@media (max-width: 1300px) {
+  .contact__inner {
+    padding: 80px 120px;
+  }
+}
+
+/* ── 1200px: tablet largo ────────────────────────────── */
 @media (max-width: 1200px) {
   .cards { grid-template-columns: repeat(2, 300px); }
   .blog__columns { grid-template-columns: 1fr; }
   .blog__img { max-width: 100%; height: 260px; }
+
+  .about-inner {
+    padding: 72px 60px;
+    gap: 60px;
+  }
+  .about__image { width: 380px; }
+  .about__image img { height: 280px; }
+
+  .contact__inner {
+    padding: 80px 60px;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
 }
 
+/* ── 1100px: tablet médio — nav, hero, about, contact ── */
+@media (max-width: 1100px) {
+  .nav__list { gap: 20px; }
+  .nav__link { font-size: 17px; }
+
+  .hero__body { left: 80px; }
+
+  .about-inner {
+    padding: 60px 40px;
+    gap: 40px;
+  }
+  .about__image { width: 300px; }
+  .about__image img { height: 240px; }
+
+  .contact__inner {
+    padding: 60px 48px;
+    gap: 36px;
+  }
+}
+
+/* ── 1024px: ajustes finos de espaçamento ────────────── */
+@media (max-width: 1024px) {
+  .team__grid { gap: 32px; }
+  .services__body { padding: 40px 30px 60px; }
+}
+
+/* ── 900px: mobile/tablet pequeno — hamburger, empilha ─ */
 @media (max-width: 900px) {
+  html { scroll-padding-top: 90px; }
+
   .header { height: 90px; }
   .logo img { height: 64px; }
   .hero { margin-top: 90px; height: 520px; }
@@ -726,6 +777,7 @@ ul    { list-style: none; }
     flex-direction: column;
     padding: 24px 32px;
     gap: 20px;
+    font-size: 18px;
     transform: translateY(-110%);
     opacity: 0;
     transition: transform .35s, opacity .3s;
@@ -752,7 +804,7 @@ ul    { list-style: none; }
   .team__grid { flex-direction: column; align-items: center; gap: 40px; }
   .team-member--lower { margin-top: 0; }
 
-  /* bubbles — responsivo: grid 2×3 */
+  /* bubbles — responsivo: flex-wrap */
   .testimonials { height: auto; padding: 60px 24px; }
   .testimonials__body { padding-top: 0; }
   .bubbles {
@@ -767,19 +819,36 @@ ul    { list-style: none; }
 
   .contact__inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     padding: 48px 24px;
   }
-  .form-field-wrap { width: 100%; }
+  .form-field-wrap { width: 100%; max-width: 100%; }
   .form-input { width: 100%; }
 
+  .blog__inner { padding: 48px 24px; }
   .blog__columns { grid-template-columns: 1fr; }
 }
 
+/* ── 600px: mobile ───────────────────────────────────── */
 @media (max-width: 600px) {
   .cards { grid-template-columns: 1fr; }
   .cards .card { width: 100%; min-height: auto; }
   .hero__title { font-size: 36px; }
-  .hero__body { padding: 40px 20px 60px; }
+  .hero__body { bottom: 80px; }
   .nav-inner { padding: 0 20px; }
+  .section-heading { font-size: 26px; }
+  .blog__img { height: 220px; }
+}
+
+/* ── 480px: mobile pequeno ───────────────────────────── */
+@media (max-width: 480px) {
+  .hero__title { font-size: 28px; }
+  .hero__body { bottom: 60px; }
+  .section-heading { font-size: 22px; }
+  .bubble { width: 200px; height: 200px; padding: 16px; }
+  .bubble p { font-size: 10px; }
+  .bubble__author { font-size: 9px; }
+  .contact__inner { padding: 40px 16px; }
+  .about-inner { padding: 40px 16px; }
+  .nav-inner { padding: 0 16px; }
 }
