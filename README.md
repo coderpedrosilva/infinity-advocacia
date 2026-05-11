@@ -1,6 +1,8 @@
 # Infinity Advocacia — Site Institucional
 
-Site institucional do escritório **Infinity Advocacia**, desenvolvido a partir de um design criado no **Figma**.
+> **⚠️ Aviso:** Este é um projeto fictício criado exclusivamente para fins de estudo e demonstração de design/desenvolvimento. O escritório **Infinity Advocacia não existe** — todos os dados (endereço, telefone, e-mail, advogados, depoimentos e artigos) são completamente fictícios.
+
+Site institucional fictício desenvolvido a partir de um design criado no **Figma**, com o objetivo de praticar a conversão de layouts para código.
 
 ## Sobre o projeto
 
